@@ -32,6 +32,9 @@ define('ace/mode/lit_highlight_rules', ["require", "exports", "module", "ace/lib
 				token: "keyword.operator.assignment.lit",
 				regex: /\+=|\-=|\*=|\/=|%=|#=|=/
 			}, {
+				"name": "keyword.operator.vararg.lit",
+				"match": "(\\.\\.\\.)"
+			}, {
 				token: "keyword.operator.range.lit",
 				regex: /\.\./
 			}, {
@@ -48,7 +51,7 @@ define('ace/mode/lit_highlight_rules', ["require", "exports", "module", "ace/lib
 				token: "string.quoted.double.lit",
 				regex: /\$"/,
 				push: [{
-					token: "string.quoted.double.lit",
+					token: "string.interpolated.lit",
 					regex: /"/,
 					next: "pop"
 				}, {
